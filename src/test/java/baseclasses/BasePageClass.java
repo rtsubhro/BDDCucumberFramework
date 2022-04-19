@@ -13,7 +13,6 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
 import pageclasses.LandingPage;
-import utils.TestContextSetup;
 
 public class BasePageClass extends BaseTestClass {
 	

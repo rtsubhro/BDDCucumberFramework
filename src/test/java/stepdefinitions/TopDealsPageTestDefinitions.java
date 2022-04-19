@@ -1,35 +1,23 @@
 package stepdefinitions;
 
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import org.testng.ITestResult;
 
 import com.aventstack.extentreports.Status;
 
 import baseclasses.BaseTestClass;
-import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import pageclasses.TopDealsPage;
-import utils.CaptureScreenshot;
 import utils.TestContextSetup;
 
 public class TopDealsPageTestDefinitions extends BaseTestClass {
 
 	TestContextSetup testContextSetup;
 
-	// public TopDealsPage topDealsPage;
-
-	// public String topDealsPage_ProductName;
-
 	public TopDealsPageTestDefinitions(TestContextSetup testContextSetup) {
 		super(testContextSetup.driver, testContextSetup.logger);
 		this.testContextSetup = testContextSetup;
 	}
 	
-	/*public TopDealsPageTestDefinitions(TestContextSetup testContextSetup) {
-		this.testContextSetup = testContextSetup;
-	}*/
 
 	@Then("^actual product name on both Landing Page and Top Deals Page should match$")
 	public void actual_product_name_on_both_landing_page_and_top_deals_page_should_match() throws Throwable {
@@ -70,28 +58,5 @@ public class TopDealsPageTestDefinitions extends BaseTestClass {
 
 		testContextSetup.topDealsPage_ProductName = testContextSetup.topDealsPage.getProductName();
 	}
-
-	/*
-	 * @After public void SetTestResult() {
-	 * 
-	 * 
-	 * String screenShotPath = CaptureScreenshot.takeScreenShot(driver,
-	 * CaptureScreenshot.generateScreenshotFileName(result));
-	 * 
-	 * if (result.getStatus() == ITestResult.FAILURE) { logger.log(Status.FAIL,
-	 * result.getName()); logger.log(Status.FAIL, result.getThrowable());
-	 * logger.fail("Screen Shot: " +
-	 * logger.addScreenCaptureFromPath(screenShotPath)); } else if
-	 * (result.getStatus() == ITestResult.SUCCESS) { logger.log(Status.PASS,
-	 * result.getName()); logger.pass("Screen Shot: " +
-	 * logger.addScreenCaptureFromPath(screenShotPath)); } else if
-	 * (result.getStatus() == ITestResult.SKIP) { logger.skip("Test Case : " +
-	 * result.getName() + " has been skipped"); }
-	 * 
-	 * 
-	 * report.flush();
-	 * 
-	 * driver.quit(); }
-	 */
 
 }
