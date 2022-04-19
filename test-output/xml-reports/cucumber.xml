@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="4" time="148.606">
+<testcase classname="Search, Add to Cart And Check Out Products" name="Search Product using shortname and Add to Cart and Checkout Product" time="147.913">
+<system-out><![CDATA[Given User is on GreenKart Landing Page.....................................passed
+When User searches for a product with shortname Tom and actual product name is extracted.passed
+And User increments the Quantity 3 times and Adds to Cart...................passed
+And User clicks on Cart.....................................................passed
+And User Proceeds to Checkout...............................................passed
+And Product Name and Quantity on Checkout Page are extracted................passed
+Then Product Name on both Landing Page and Checkout Page should match.......passed
+And Quantity on Checkout Page should equal 3 plus One.......................passed
+And Apply button should be visible on Checkout Page.........................passed
+And Place Order button should be visible on Checkout Page...................passed
+]]></system-out>
+</testcase>
+<testcase classname="Search, Add to Cart And Check Out Products" name="Search Product using shortname and Add to Cart and Checkout Product 2" time="147.386">
+<system-out><![CDATA[Given User is on GreenKart Landing Page.....................................passed
+When User searches for a product with shortname Beet and actual product name is extracted.passed
+And User increments the Quantity 2 times and Adds to Cart...................passed
+And User clicks on Cart.....................................................passed
+And User Proceeds to Checkout...............................................passed
+And Product Name and Quantity on Checkout Page are extracted................passed
+Then Product Name on both Landing Page and Checkout Page should match.......passed
+And Quantity on Checkout Page should equal 2 plus One.......................passed
+And Apply button should be visible on Checkout Page.........................passed
+And Place Order button should be visible on Checkout Page...................passed
+]]></system-out>
+</testcase>
+<testcase classname="Search and Order Products" name="Search Product using shortname on both Landing Page and Top Deals Page" time="137.196">
+<system-out><![CDATA[Given User is on GreenKart Landing Page.....................................passed
+When User searches for a product with shortname Tom and actual product name is extracted.passed
+And User also searches for a product on Top Deals page with the same shortname Tom and actual product name is extracted.passed
+Then actual product name on both Landing Page and Top Deals Page should match.passed
+]]></system-out>
+</testcase>
+<testcase classname="Search and Order Products" name="Search Product using shortname on both Landing Page and Top Deals Page 2" time="137.617">
+<failure message="Landing Page Product Name: Beetroot does not match Top Deals Page Product Name: No data" type="java.lang.AssertionError"><![CDATA[Given User is on GreenKart Landing Page.....................................passed
+When User searches for a product with shortname Beet and actual product name is extracted.passed
+And User also searches for a product on Top Deals page with the same shortname Beet and actual product name is extracted.passed
+Then actual product name on both Landing Page and Top Deals Page should match.failed
+
+StackTrace:
+java.lang.AssertionError: Landing Page Product Name: Beetroot does not match Top Deals Page Product Name: No data
+	at org.testng.Assert.fail(Assert.java:99)
+	at stepdefinitions.TopDealsPageTestDefinitions.actual_product_name_on_both_landing_page_and_top_deals_page_should_match(TopDealsPageTestDefinitions.java:49)
+	at ✽.actual product name on both Landing Page and Top Deals Page should match(file:///C:/Selenium-Java-Eudemy/workspace/BDDCucumberFramework/src/test/java/features/SearchProduct.feature:8)
+]]></failure>
+</testcase>
+</testsuite>
