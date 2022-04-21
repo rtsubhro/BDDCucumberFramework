@@ -15,14 +15,12 @@ import com.aventstack.extentreports.Status;
 import pageclasses.LandingPage;
 
 public class BasePageClass extends BaseTestClass {
-	
-	//public ExtentTest logger;
 
 	public BasePageClass(WebDriver driver, ExtentTest logger) {
 		super(driver, logger);
 		this.driver = driver;
 		this.logger = logger;
-		//PageFactory.initElements(driver, this);
+		// PageFactory.initElements(driver, this);
 	}
 
 	/**
@@ -33,21 +31,21 @@ public class BasePageClass extends BaseTestClass {
 	public LandingPage openApplication(String websiteURL) {
 		try {
 			logger.log(Status.INFO, "Opening the website : " + websiteURL);
-						
+
 			driver.get(websiteURL);
-			// logger.log(Status.PASS, "Successfully opened the website : " + websiteURL);
+
 			reportPass(websiteURL + " URL identified and opened successfully");
 		} catch (Exception e) {
 			reportFail(e.getMessage());
 			e.printStackTrace();
 		}
 		// waitForPageLoad();
-		
+
 		LandingPage landingPage = new LandingPage(driver, logger);
-		
+
 		PageFactory.initElements(driver, landingPage);
 		return landingPage;
-		// return PageFactory.initElements(driver, LandingPage.class);
+
 	}
 
 	/**
@@ -135,7 +133,7 @@ public class BasePageClass extends BaseTestClass {
 
 	public void reportFail(String reportString) {
 		logger.log(Status.FAIL, reportString);
-		//takeScreenShotOnFailure();
+		// takeScreenShotOnFailure();
 		Assert.fail(reportString);
 	}
 

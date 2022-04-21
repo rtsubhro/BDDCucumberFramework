@@ -25,29 +25,21 @@ public class TestContextSetup {
 	public LandingPage landingPage;
 
 	public String landingPage_ProductName;
-	
+
 	public TopDealsPage topDealsPage;
-	
+
 	public String topDealsPage_ProductName;
-	
+
 	public CheckoutPage checkoutPage;
-	
+
 	public String checkoutPage_ProductName;
-	
+
 	public int checkoutPage_Quantity;
-	
-	//public LandingPageTestDefinitions landingPageTestDefinitions;
-	
-	//public CheckoutPageTestDefinitions checkoutPageTestDefinitions;
 
 	public TestContextSetup() {
 		pageObjectManager = new PageObjectManager(driver, logger);
 
 		baseTestClass = new BaseTestClass(driver, logger);
-		//baseTestClass = new BaseTestClass();
-		//landingPageTestDefinitions = new LandingPageTestDefinitions();
-		//checkoutPageTestDefinitions = new CheckoutPageTestDefinitions();
-		//logger = baseTestClass.logger;
 	}
 
 }

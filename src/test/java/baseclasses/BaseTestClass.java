@@ -46,12 +46,12 @@ public class BaseTestClass {
 
 	String projectConfigPropertiesPath = System.getProperty("user.dir")
 			+ "\\resources\\objectrepository\\projectConfig.properties";
-	
+
 	public BaseTestClass(WebDriver driver, ExtentTest logger) {
 		this.driver = driver;
 		this.logger = logger;
 	}
-	
+
 	public void loadProjectConfigProperties() {
 		if (props == null) {
 			props = new Properties();
@@ -72,15 +72,15 @@ public class BaseTestClass {
 	 * @param browserNameKey
 	 */
 	public WebDriver invokeBrowser(String browserNameKey) {
-		
+
 		loadProjectConfigProperties();
 
 		String browserName_properties = props.getProperty(browserNameKey);
-		
+
 		String browserName_enviroment = System.getProperty(browserNameKey);
-		
+
 		String browserName = browserName_enviroment != null ? browserName_enviroment : browserName_properties;
-		
+
 		try {
 			switch (browserName.toLowerCase()) {
 
@@ -110,9 +110,9 @@ public class BaseTestClass {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
-		
+
 		return driver;
-		
+
 	}
 
 	/**
@@ -161,7 +161,6 @@ public class BaseTestClass {
 		try {
 			Thread.sleep(seconds * 1000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -211,7 +210,6 @@ public class BaseTestClass {
 			}
 
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

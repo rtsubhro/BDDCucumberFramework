@@ -35,24 +35,23 @@ public class CaptureScreenshot {
 		}
 
 		// logger.addScreenCaptureFromPath(destFilePath);
-		
+
 		return destFilePath;
 	}
-	
+
 	public static byte[] generateFileContent(WebDriver driver) {
-		
+
 		TakesScreenshot takeScreenshot = (TakesScreenshot) driver;
 
 		File srcFile = takeScreenshot.getScreenshotAs(OutputType.FILE);
-		
+
 		byte[] fileContent = null;
 		try {
 			fileContent = FileUtils.readFileToByteArray(srcFile);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return fileContent;
 	}
 
