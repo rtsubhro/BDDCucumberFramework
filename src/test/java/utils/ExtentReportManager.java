@@ -5,6 +5,12 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.ViewName;
 
+/**
+ * Utility class for setting up Extent Report format
+ * @author rtsubhro
+ *
+ */
+
 public class ExtentReportManager {
 
 	public static ExtentReports report;

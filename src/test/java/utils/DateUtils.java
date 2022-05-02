@@ -2,6 +2,9 @@ package utils;
 
 import java.util.Date;
 
+/*
+ * Utility class for setting Date and Timestamp format
+ */
 public class DateUtils {
 
 	public static String getTimeStamp() {
